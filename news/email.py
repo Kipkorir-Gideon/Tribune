@@ -1,5 +1,5 @@
 from django.core.mail import EmailMultiAlternatives
-from django.template.loaders import render_to_string
+from django.template.loader import render_to_string
 
 
 def send_welcome_email(name,receiver):
@@ -14,4 +14,4 @@ def send_welcome_email(name,receiver):
 
     msg = EmailMultiAlternatives(subject, sender, text_content,[receiver])
     msg.attach_alternative(html_content,'text/html')
-    msg.send
+    msg.send()
